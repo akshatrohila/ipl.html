@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPL 3D Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 40px;
+      color: #ffc107;
+    }
+
+    .scene {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      perspective: 600px;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 10s infinite linear;
+    }
+
+    .face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #fff;
+      line-height: 200px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .front  { transform: rotateY(  0deg) translateZ(100px); }
+    .back   { transform: rotateY(180deg) translateZ(100px); }
+    .right  { transform: rotateY( 90deg) translateZ(100px); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); }
+    .top    { transform: rotateX( 90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+    @keyframes rotateCube {
+      from { transform: rotateX(0deg) rotateY(0deg); }
+      to   { transform: rotateX(360deg) rotateY(360deg); }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>IPL 3D Animated Cube</h1>
+
+<div class="scene">
+  <div class="cube">
+    <div class="face front">MI</div>
+    <div class="face back">CSK</div>
+    <div class="face right">RCB</div>
+    <div class="face left">KKR</div>
+    <div class="face top">RR</div>
+    <div class="face bottom">LSG</div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 IPL Teams in 3D Animation
+</footer>
+
+</body>
+</html>
